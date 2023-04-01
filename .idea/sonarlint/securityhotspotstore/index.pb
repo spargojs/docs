@@ -10,8 +10,6 @@ B
 O
 public/stylesheets/tailwind.css,3/f/3f40e21cd0576b8e027965f6b45d6856d44bf255
 L
-public/stylesheets/style.css,3/7/373d337c32dec564fe0da458c6478733eec21e5a
-L
 public/javascripts/spargo.js,f/9/f9217df43d6dcb5ec0105e8056758a6ada0b1f22
 C
 routes/docs_sync.js,8/d/8d08c9c798b9f63fffea5d0b4268a1f0129c002a
@@ -61,5 +59,3 @@ C
 views/docs_mask.hbs,3/a/3a01c755f81425fe380776ca27672b708253ff1c
 7
 bin/www,f/9/f9f3ad31c1666c9d010b84cbbe24e70370a40411
-=
-.dockerignore,0/5/05a721ebe3ba0754116825ed1359ff1785f4bbac
