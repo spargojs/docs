@@ -1,0 +1,81 @@
+<a href="#how_to" class="text-4xl" id="how_to"># How To</a>
+<hr class="h-1 mx-auto my-4 bg-gray-700 border-0 rounded md:my-10"/>
+
+<p class="text-lg mt-10">
+    @mask serves as a convenient way to add some pre-defined masks to an input.
+</p>
+
+<div style="background-color: #1d2538;"
+     class="mt-10 overflow-x-scroll max-w-sm sm:max-w-7xl border-2 border-gray-800 rounded-lg shadow-xl drop-shadow-lg">
+            <pre>
+                <code class="language-html -mb-10 -mt-3">
+&lt;div ignite="masks"&gt;
+    &lt;input type="tel" id="phone" name="phone" placeholder="Phone" @sync="phone" @mask="phone"/>
+    &lt;input type="text" id="mask-currency" name="mask-currency" placeholder="Currency" @sync="currency" @mask="currency"/>
+    &lt;input type="text" id="mask-currency-gbp" name="mask-currency-gbp" placeholder="Currency GBP" @sync="currencyGBP" @mask="currency" @mask-args="en-GB|GBP"/>
+    &lt;input type="text" id="mask-date" name="mask-date" placeholder="Date" @sync="date" @mask="date"/>
+&lt;/div&gt;
+
+&lt;script&gt;
+    function masks() {
+        return {
+            phone: '',
+            currency: '',
+            currencyGBP: '',
+            date: '',
+        }
+    }
+&lt;/script&gt;
+                </code>
+            </pre>
+</div>
+<div class="my-10 text-lg">
+    The code above will result in the following (with further styling added and a couple name changes):
+</div>
+
+<div ignite="masks">
+    <input type="tel" id="phone"
+           class="rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-stone-600 focus:border-transparent"
+           name="phone" placeholder="Phone" @sync="phone" @mask="phone"/>
+    <input type="text" id="mask-currency"
+           class="rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-stone-600 focus:border-transparent mt-4"
+           name="mask-currency" placeholder="Currency" @sync="currency" @mask="currency"/>
+    <input type="text" id="mask-currency-gbp"
+           class="rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-stone-600 focus:border-transparent mt-4"
+           name="mask-currency-gbp" placeholder="Currency GBP" @sync="currencyGBP" @mask="currency"
+           @mask-args="en-GB|GBP"/>
+    <input type="text" id="mask-date"
+           class="rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-stone-600 focus:border-transparent mt-4"
+           name="mask-date" placeholder="Date" @sync="date" @mask="date"/>
+</div>
+<div class="border-l-4 border-blue-600 bg-blue-200 p-4 mt-10">
+    <div class="flex">
+        <div class="flex-shrink-0">
+            <svg class="h-8 w-8 text-blue-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd"
+                      d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a.75.75 0 000 1.5h.253a.25.25 0 01.244.304l-.459 2.066A1.75 1.75 0 0010.747 15H11a.75.75 0 000-1.5h-.253a.25.25 0 01-.244-.304l.459-2.066A1.75 1.75 0 009.253 9H9z"
+                      clip-rule="evenodd"/>
+            </svg>
+        </div>
+        <div class="ml-3">
+            <h3 class="text-lg font-medium text-blue-800">Custom Masks.</h3>
+            <div class="mt-2 text-lg text-blue-700">
+                <p>
+                    We are looking at adding support for providing custom masks. If this is something you would really
+                    love to see, please let us know in Github discussions.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script nonce="{{@cspNonce}}">
+    function masks() {
+        return {
+            phone: '',
+            currency: '',
+            currencyGBP: '',
+            date: '',
+        }
+    }
+</script>

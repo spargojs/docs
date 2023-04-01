@@ -1,0 +1,29 @@
+{
+  "name": "spargo-docs",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "npm run build && node ./bin/www",
+    "serve": "node ./bin/www",
+    "assets:js": "esbuild public/javascripts/spargo.js --bundle --minify --tree-shaking=true --splitting --format=esm --outdir=public/javascripts/compiled",
+    "assets:css:dev": "postcss public/stylesheets/tailwind.css -o public/stylesheets/style.css --watch",
+    "assets:css:prod": "postcss public/stylesheets/tailwind.css -o public/stylesheets/style.css",
+    "dev": "npm run assets:js && npm run assets:css:dev",
+    "build": "npm run assets:js && npm run assets:css:prod"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.14",
+    "cookie-parser": "~1.4.4",
+    "debug": "~4.3.4",
+    "esbuild": "0.17.14",
+    "express": "^4.18.2",
+    "hbs": "^4.2.0",
+    "helmet": "^6.0.1",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
+    "postcss": "^8.4.21",
+    "postcss-cli": "^10.1.0",
+    "spargo": "^1.0.1",
+    "tailwindcss": "^3.3.0"
+  }
+}

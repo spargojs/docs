@@ -1,0 +1,67 @@
+<a href="#how_to" class="text-4xl" id="how_to"># How To</a>
+<hr class="h-1 mx-auto my-4 bg-gray-700 border-0 rounded md:my-10"/>
+
+<p class="text-lg mt-10">
+    @click operates in the same spirit as Vue's @click: a mechanism to add a click event to an element.
+</p>
+
+<div style="background-color: #1d2538;"
+     class="mt-10 overflow-x-scroll max-w-sm sm:max-w-7xl border-2 border-gray-800 rounded-lg shadow-xl drop-shadow-lg">
+            <pre>
+                <code class="language-html -mb-10 -mt-3">
+&lt;div ignite="click"&gt;
+    &lt;div @if="show">
+        &lt;span @text="message"&gt;&lt;/span&gt;
+    &lt;/div>
+    &lt;div @else>
+        No hello world for you
+    &lt;/div>
+    &lt;button @click="toggleShow">
+        Toggle Show
+    &lt;/button>
+&lt;/div&gt;
+
+&lt;script&gt;
+    function click() {
+        return {
+            show: true,
+            message: 'hello world',
+            toggleShow() {
+                this.show = !this.show;
+            }
+        }
+    }
+&lt;/script&gt;
+                </code>
+            </pre>
+</div>
+<div class="my-10 text-lg">
+    The code above will result in the following (with further styling added and a couple name changes):
+</div>
+
+<div ignite="click">
+    <div @if="show">
+        <span @text="message"></span>
+    </div>
+    <div @else>
+        No hello world for you
+    </div>
+    <button
+            @click="toggleShow"
+            class="mt-3 flex-none rounded-md bg-stone-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-stone-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-500"
+    >
+        Toggle Show
+    </button>
+</div>
+
+<script nonce="{{@cspNonce}}">
+    function click() {
+        return {
+            show: true,
+            message: 'hello world',
+            toggleShow() {
+                this.show = !this.show;
+            }
+        }
+    }
+</script>

@@ -1,0 +1,52 @@
+<a href="#how_to" class="text-4xl" id="how_to"># How To</a>
+<hr class="h-1 mx-auto my-4 bg-gray-700 border-0 rounded md:my-10"/>
+
+<p class="text-lg mt-10">
+    getters are not unique to Spargo.js - they are built into JavaScript! They are just first class citizens in
+    Spargo.js and fully supported. To put succinctly, they provide a mechanism to programmatically provide values to
+    Spargo.js' custom attributes.
+</p>
+
+<div style="background-color: #1d2538;"
+     class="mt-10 overflow-x-scroll max-w-sm sm:max-w-7xl border-2 border-gray-800 rounded-lg shadow-xl drop-shadow-lg">
+            <pre>
+                <code class="language-html -mb-10 -mt-3">
+&lt;div ignite="getters"&gt;
+    &lt;input type="text" id="latin" name="latin" placeholder="Latin" @sync="latin"/>
+    &lt;span @text="getter">&lt;/span>
+&lt;/div&gt;
+
+&lt;script&gt;
+    function getters() {
+        return {
+            latin: 'dum spiro spero',
+            get getter() {
+                return `Will add on to latin: ${this.latin}`
+            },
+        }
+    }
+&lt;/script&gt;
+                </code>
+            </pre>
+</div>
+<div class="my-10 text-lg">
+    The code above will result in the following (with further styling added and a couple name changes):
+</div>
+
+<div ignite="getters">
+    <input type="text" id="latin"
+           class="rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-stone-600 focus:border-transparent"
+           name="latin" placeholder="Latin" @sync="latin"/>
+    <p class="text-xl mt-4" @text="getter"></p>
+</div>
+
+<script nonce="{{@cspNonce}}">
+    function getters() {
+        return {
+            latin: 'dum spiro spero',
+            get getter() {
+                return `Will add on to latin: ${this.latin}`
+            },
+        }
+    }
+</script>

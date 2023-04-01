@@ -1,0 +1,81 @@
+<a href="#how_to" class="text-4xl" id="how_to"># How To</a>
+<hr class="h-1 mx-auto my-4 bg-gray-700 border-0 rounded md:my-10"/>
+<div class="border-l-4 border-blue-600 bg-blue-200 p-4 mt-10">
+    <div class="flex">
+        <div class="flex-shrink-0">
+            <svg class="h-8 w-8 text-blue-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd"
+                      d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a.75.75 0 000 1.5h.253a.25.25 0 01.244.304l-.459 2.066A1.75 1.75 0 0010.747 15H11a.75.75 0 000-1.5h-.253a.25.25 0 01-.244-.304l.459-2.066A1.75 1.75 0 009.253 9H9z"
+                      clip-rule="evenodd"/>
+            </svg>
+        </div>
+        <div class="ml-3">
+            <h3 class="text-lg font-medium text-blue-800">Why Not Double Curly Brace Syntax?</h3>
+            <div class="mt-2 text-lg text-blue-700">
+                <p>
+                    Excellent questions. Originally, Spargo.js went with the normal curly brace syntax. However, there
+                    was a very noticeable long blink that would occur: the user would see the curly braces for a split
+                    second before they would disappear and be replaced with the correct value. We quickly came to the
+                    conclusion that this kind of behaviour was not ideal, and switched to using @text instead.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<p class="text-lg mt-10">
+    @text serves as the mechanism to print values from state into markup.
+</p>
+
+<div style="background-color: #1d2538;"
+     class="mt-10 overflow-x-scroll max-w-sm sm:max-w-7xl border-2 border-gray-800 rounded-lg shadow-xl drop-shadow-lg">
+            <pre>
+                <code class="language-html -mb-10 -mt-3">
+&lt;div ignite="text"&gt;
+    &lt;span @text="bars"&gt;&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+    function text() {
+        return {
+            bars: 'foo bars',
+        }
+    }
+&lt;/script&gt;
+                </code>
+            </pre>
+</div>
+<div class="my-10 text-lg">
+    The code above will result in the following (with further styling added and a couple name changes):
+</div>
+
+<div ignite="text">
+    <span class="text-lg" @text="bar"></span>
+</div>
+
+<div class="border-l-4 border-red-600 bg-red-200 p-4 mt-10">
+    <div class="flex">
+        <div class="flex-shrink-0">
+            <svg class="h-8 w-8 text-red-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.28 7.22a.75.75 0 00-1.06 1.06L8.94 10l-1.72 1.72a.75.75 0 101.06 1.06L10 11.06l1.72 1.72a.75.75 0 101.06-1.06L11.06 10l1.72-1.72a.75.75 0 00-1.06-1.06L10 8.94 8.28 7.22z"
+                      clip-rule="evenodd"/>
+            </svg>
+        </div>
+        <div class="ml-3">
+            <h3 class="text-lg font-medium text-red-800">Never Trust User Input!</h3>
+            <div class="mt-2 text-lg text-red-700">
+                <p>
+                    If the value for @text stems from user input, you <b>must</b> validate it.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script nonce="{{@cspNonce}}">
+    function text() {
+        return {
+            bar: 'foo bars',
+        }
+    }
+</script>

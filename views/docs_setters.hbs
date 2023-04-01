@@ -1,0 +1,57 @@
+<a href="#how_to" class="text-4xl" id="how_to"># How To</a>
+<hr class="h-1 mx-auto my-4 bg-gray-700 border-0 rounded md:my-10"/>
+
+<p class="text-lg mt-10">
+    Like getters, setters are built into JavaScript; and like getters, setters are first class citizens in Spargo.js!
+    Their power shines when you want to provide extra functionality while updating a value in state.
+</p>
+
+<div style="background-color: #1d2538;"
+     class="mt-10 overflow-x-scroll max-w-sm sm:max-w-7xl border-2 border-gray-800 rounded-lg shadow-xl drop-shadow-lg">
+            <pre>
+                <code class="language-html -mb-10 -mt-3">
+&lt;div ignite="setters"&gt;
+    &lt;input type="text" id="setter" name="setter" placeholder="Setter" @sync="updateSetterValue"/>
+    &lt;p @text="setterValue">&lt;/p>
+    &lt;p @text="setterCount">&lt;/p>
+&lt;/div&gt;
+
+&lt;script&gt;
+    function setters() {
+        return {
+            setterValue: null,
+            setterCount: 0,
+            set updateSetterValue(value) {
+                this.setterCount++;
+                this.setterValue = value;
+            },
+        }
+    }
+&lt;/script&gt;
+                </code>
+            </pre>
+</div>
+<div class="my-10 text-lg">
+    The code above will result in the following (with further styling added and a couple name changes):
+</div>
+
+<div ignite="setters">
+    <input type="text" id="setter"
+           class="rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-stone-600 focus:border-transparent"
+           name="setter" placeholder="Setter" @sync="updateSetterValue"/>
+    <p class="text-xl mt-3" @text="setterValue"></p>
+    <p class="text-xl" @text="setterCount"></p>
+</div>
+
+<script nonce="{{@cspNonce}}">
+    function setters() {
+        return {
+            setterValue: null,
+            setterCount: 0,
+            set updateSetterValue(value) {
+                this.setterCount++;
+                this.setterValue = value;
+            },
+        }
+    }
+</script>

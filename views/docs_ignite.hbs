@@ -1,0 +1,48 @@
+<a href="#how_to" class="text-4xl" id="how_to"># How To</a>
+<hr class="h-1 mx-auto my-4 bg-gray-700 border-0 rounded md:my-10"/>
+<div class="border-l-4 border-yellow-600 bg-yellow-200 p-4 mt-10">
+    <div class="flex">
+        <div class="flex-shrink-0">
+            <svg class="h-8 w-8 text-yellow-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd"
+                      d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.189-1.458-1.515-2.625L8.485 2.495zM10 5a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 0110 5zm0 9a1 1 0 100-2 1 1 0 000 2z"
+                      clip-rule="evenodd"/>
+            </svg>
+        </div>
+        <div class="ml-3">
+            <h3 class="text-lg font-medium text-yellow-800">Inner Spargo.js Elements Not Tested/Supported.</h3>
+            <div class="mt-2 text-lg text-yellow-700">
+                <p>
+                    At this time, Spargo.js does not support adding new reactive Spargo.js elements within an existing
+                    reactive Spargo.js element. Potentially in the future support will be added for this; However, if
+                    you find yourself in need for such things, a larger JavaScript framework like Vue.js should probably
+                    be considered.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<p class="text-lg mt-10">
+    Adding the ignite attribute to an element tells Spargo.js that it should be reactive along with all its children
+    elements/nodes. The value for the attribute should be the name of a function that returns an object. This object
+    represents the state that the Spargo.js element should update and react to.
+</p>
+
+<div style="background-color: #1d2538;"
+     class="mt-10 overflow-x-scroll max-w-sm sm:max-w-7xl border-2 border-gray-800 rounded-lg shadow-xl drop-shadow-lg">
+            <pre>
+                <code class="language-html -mb-10 -mt-3">
+&lt;div ignite="spark"&gt;
+    &lt;span @text="latin"&gt;&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+    function spark() {
+        return {
+            latin: 'dum spiro spero',
+        }
+    }
+&lt;/script&gt;
+                </code>
+            </pre>
+</div>

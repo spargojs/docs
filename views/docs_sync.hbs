@@ -1,0 +1,93 @@
+<a href="#how_to" class="text-4xl" id="how_to"># How To</a>
+<hr class="h-1 mx-auto my-4 bg-gray-700 border-0 rounded md:my-10"/>
+<div class="border-l-4 border-yellow-600 bg-yellow-200 p-4 mt-10">
+    <div class="flex">
+        <div class="flex-shrink-0">
+            <svg class="h-8 w-8 text-yellow-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd"
+                      d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.189-1.458-1.515-2.625L8.485 2.495zM10 5a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 0110 5zm0 9a1 1 0 100-2 1 1 0 000 2z"
+                      clip-rule="evenodd"/>
+            </svg>
+        </div>
+        <div class="ml-3">
+            <h3 class="text-lg font-medium text-yellow-800">Not All Input Types Supported/Tested</h3>
+            <div class="mt-2 text-lg text-yellow-700">
+                <p>
+                    At this time, Spargo.js supports input boxes. All other types (i.e. textarea, checkbox, select,
+                    etc.)
+                    will be tested and support added for in due time.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<p class="text-lg mt-10">
+    @sync operates in the same spirit as Vue's v-model: a mechanism to keep a piece of state in sync with an inputs
+    value.
+</p>
+
+<div style="background-color: #1d2538;"
+     class="mt-10 overflow-x-scroll max-w-sm sm:max-w-7xl border-2 border-gray-800 rounded-lg shadow-xl drop-shadow-lg">
+            <pre>
+                <code class="language-html -mb-10 -mt-3">
+&lt;div ignite="home"&gt;
+    &lt;input type="text" id="message" name="message" placeholder="Message" @sync="message" /&gt;
+    &lt;span @text="message"&gt;&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+    function home() {
+        return {
+            message: 'hello world',
+        }
+    }
+&lt;/script&gt;
+                </code>
+            </pre>
+</div>
+<div class="my-10 text-lg">
+    The code above will result in the following (with further styling added and a couple name changes):
+</div>
+
+<div ignite="sync">
+    <input
+            type="text"
+            id="message"
+            name="message"
+            placeholder="Message"
+            @sync="message"
+            class="rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-stone-600 focus:border-transparent mb-3"
+    />
+    <span class="text-lg" @text="message"></span>
+</div>
+<hr class="w-48 h-1 mx-auto my-10 bg-gray-700 border-0 rounded md:my-20"/>
+
+<div class="border-l-4 border-blue-600 bg-blue-200 p-4 mt-10">
+    <div class="flex">
+        <div class="flex-shrink-0">
+            <svg class="h-8 w-8 text-blue-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd"
+                      d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a.75.75 0 000 1.5h.253a.25.25 0 01.244.304l-.459 2.066A1.75 1.75 0 0010.747 15H11a.75.75 0 000-1.5h-.253a.25.25 0 01-.244-.304l.459-2.066A1.75 1.75 0 009.253 9H9z"
+                      clip-rule="evenodd"/>
+            </svg>
+        </div>
+        <div class="ml-3">
+            <h3 class="text-lg font-medium text-blue-800">Dot Notation Coming V2.</h3>
+            <div class="mt-2 text-lg text-blue-700">
+                <p>
+                    It is a common pattern to use dot notation when syncing with a piece of state
+                    (such as @sync="user.name"). Right now, Spargo.js does not support this.
+                    However, we are hard at work on this feature and are planning on releasing it with version 2.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script nonce="{{@cspNonce}}">
+    function sync() {
+        return {
+            message: 'hello world',
+        }
+    }
+</script>

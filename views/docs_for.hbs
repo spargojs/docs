@@ -1,0 +1,165 @@
+<a href="#how_to" class="text-4xl" id="how_to"># How To</a>
+<hr class="h-1 mx-auto my-4 bg-gray-700 border-0 rounded md:my-10"/>
+
+<p class="text-lg mt-10">
+    @for operates in the same spirit as Vue's v-for: a mechanism to iterate over a piece of state and create markup
+    on each loop. Two key difference between Spargo.js and Vue is that a key does not need to be provided for Spargo.js
+    and there are two options for looping in Spargo.js.
+</p>
+<hr class="w-48 h-1 mx-auto my-10 bg-gray-700 border-0 rounded md:my-20"/>
+
+<a href="#option_one" class="text-4xl" id="option_one"># Option One: Flat Array</a>
+<hr class="h-1 mx-auto my-4 bg-gray-700 border-0 rounded md:my-10"/>
+
+<p class="text-lg mt-10">
+    When dealing with a flat array, a key-value pair must be provided to Spargo.js' @for.
+</p>
+<div style="background-color: #1d2538;"
+     class="mt-10 overflow-x-scroll max-w-sm sm:max-w-7xl border-2 border-gray-800 rounded-lg shadow-xl drop-shadow-lg">
+            <pre>
+                <code class="language-html -mb-10 -mt-3">
+&lt;div ignite="forFlat"&gt;
+    &lt;div @for="country in countries">
+       &lt;p @text="country">&lt;/p>
+    &lt;/div>
+&lt;/div&gt;
+
+&lt;script&gt;
+    function forFlat() {
+        return {
+            countries: [
+                'America',
+                'Canada',
+                'Mexico',
+                'England'
+            ],
+        }
+    }
+&lt;/script&gt;
+                </code>
+            </pre>
+</div>
+<div class="my-10 text-lg">
+    The code above will result in the following (with further styling added and a couple name changes):
+</div>
+
+<div ignite="forFlat">
+    <div @for="country in countries">
+        <p class="text-xl" @text="country"></p>
+    </div>
+</div>
+<hr class="w-48 h-1 mx-auto my-10 bg-gray-700 border-0 rounded md:my-20"/>
+
+<a href="#option_two" class="text-4xl" id="option_two"># Option Two: Array of Objects</a>
+<hr class="h-1 mx-auto my-4 bg-gray-700 border-0 rounded md:my-10"/>
+<p class="text-lg mt-10">
+    When dealing with an array of objects, Spargo.js simplifies the process by taking in an underscore (_) as the key.
+    Then, when referencing keys in the objects of the array, there is no need to use dot notation.
+</p>
+<div style="background-color: #1d2538;"
+     class="mt-10 overflow-x-scroll max-w-sm sm:max-w-7xl border-2 border-gray-800 rounded-lg shadow-xl drop-shadow-lg">
+            <pre>
+                <code class="language-html -mb-10 -mt-3">
+&lt;div ignite="forObjects"&gt;
+    &lt;div @for="_ in users">
+        &lt;p @text="name">&lt;/p>
+        &lt;p @text="email">&lt;/p>
+    &lt;/div>
+&lt;/div&gt;
+
+&lt;script&gt;
+    function forObjects() {
+        return {
+           users: [
+                {
+                    name: 'Jon Doe',
+                    email: 'jdoe@example.org',
+                },
+                {
+                    name: 'Jane Cool',
+                    email: 'jcool@example.org',
+                },
+                {
+                    name: 'Jack Foo',
+                    email: 'jfoo@example.org',
+                },
+                {
+                    name: 'Jim Bar',
+                    email: 'jbar@example.org',
+                }
+            ],
+        }
+    }
+&lt;/script&gt;
+                </code>
+            </pre>
+</div>
+<div class="my-10 text-lg">
+    The code above will result in the following (with further styling added and a couple name changes):
+</div>
+
+<div ignite="forObjects">
+    <div @for="_ in users" class="mt-4">
+        <p @text="name"></p>
+        <p @text="email"></p>
+    </div>
+</div>
+<hr class="w-48 h-1 mx-auto my-10 bg-gray-700 border-0 rounded md:my-20"/>
+
+<div class="border-l-4 border-yellow-600 bg-yellow-200 p-4 mt-10">
+    <div class="flex">
+        <div class="flex-shrink-0">
+            <svg class="h-8 w-8 text-yellow-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd"
+                      d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.189-1.458-1.515-2.625L8.485 2.495zM10 5a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 0110 5zm0 9a1 1 0 100-2 1 1 0 000 2z"
+                      clip-rule="evenodd"/>
+            </svg>
+        </div>
+        <div class="ml-3">
+            <h3 class="text-lg font-medium text-yellow-800">Careful When Pushing To Array</h3>
+            <div class="mt-2 text-lg text-yellow-700">
+                <p>
+                    Spargo.js does not have the ability to react to an array's change. Due to this, if reactivity is
+                    needed, a simple workaround is to use spread notation to add a value to an array. For example:
+                    this.countries = [...this.countries, 'Portugal'];
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script nonce="{{@cspNonce}}">
+    function forFlat() {
+        return {
+            countries: [
+                'America',
+                'Canada',
+                'Mexico',
+                'England'
+            ],
+        }
+    }
+
+    function forObjects() {
+        return {
+            users: [
+                {
+                    name: 'Jon Doe',
+                    email: 'jdoe@example.org',
+                },
+                {
+                    name: 'Jane Cool',
+                    email: 'jcool@example.org',
+                },
+                {
+                    name: 'Jack Foo',
+                    email: 'jfoo@example.org',
+                },
+                {
+                    name: 'Jim Bar',
+                    email: 'jbar@example.org',
+                }
+            ],
+        }
+    }
+</script>
