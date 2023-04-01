@@ -6,3 +6,4 @@ package-lock.json
 .idea
 public/javascripts/compiled
 public/stylesheets/style.css
+fly.toml
